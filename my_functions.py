@@ -16,3 +16,29 @@ def get_db_url(db_name,user=env.user,password=env.password,host=env.host):
     Depends on env
     """
     return f'mysql+pymysql://{user}:{password}@{host}/{db_name}'
+
+def get_letter_grade(grade):
+    """
+    Returns a letter grade for an integer given
+
+    Parameters
+    ----------
+    grade : int
+        Expects an integer likely between 0 and 100.
+
+    Returns
+    -------
+    str
+        Based on value given, returns letter grade F-A as string.
+
+    """
+    if grade >= 90:
+        return 'A'
+    elif grade >= 80:
+        return 'B'
+    elif grade >= 70:
+        return 'C'
+    elif grade >= 60:
+        return 'D'
+    else:
+        return 'F'
