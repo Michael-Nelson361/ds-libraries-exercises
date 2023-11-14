@@ -1,13 +1,24 @@
-# Import libraries
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-
+# Try to import env
 try:
     import env
 except:
     print('Warning: no env.py file found. You will need to supply your own credentials!')
+
+def libraries():
+    """
+    Import libraries. Takes no arguments and returns None
+    """
+    import pandas as pd
+    import numpy as np
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    import env
+    
+    from scipy import stats
+    from pydataset import data
+    
+    return None
+    
 
 def get_db_url(db_name,user=env.user,password=env.password,host=env.host):
     """
